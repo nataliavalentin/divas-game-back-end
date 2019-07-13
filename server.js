@@ -75,7 +75,7 @@ servidor.post('/divas/cadastro', (request, response) => {
 servidor.post('/divas/login', (request, response) => {
     DivasController.login(request.body)
         .then(respostaDoLogin => {
-            response.send(respostaDoLogin)
+            response.json({ respostaDoLogin })
         })
         .catch(error => {
             if (error.name === "ValidationError") {

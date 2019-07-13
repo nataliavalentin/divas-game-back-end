@@ -42,7 +42,7 @@ const login = async(dadosDoLogin) => {
                     username: divaEncontrada.username,
                     id: divaEncontrada._id
                 },
-                process.env.PRIVATE_KEY, { expiresIn: 60 }
+                process.env.PRIVATE_KEY
             )
             return { auth: true, token };
         } else {
