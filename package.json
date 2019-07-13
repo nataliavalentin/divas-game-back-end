@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
+    "node": "10.15.0",
     "dependencies": {
         "body": "^5.1.0",
         "collection-visit": "^1.0.0",
