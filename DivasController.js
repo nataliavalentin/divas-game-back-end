@@ -52,4 +52,10 @@ const login = async(dadosDoLogin) => {
     }
 }
 
-module.exports = { getAll, getById, add, remove, update, login }
+const pontos = async() => {
+    return DivasModel.find({}, "ponto", (error, usuario) => {
+        return usuario
+    })
+}
+
+module.exports = { getAll, getById, add, remove, update, login, pontos }

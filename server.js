@@ -17,6 +17,11 @@ servidor.get("/divas", (request, response) => {
         .then(divas => response.send(divas))
 })
 
+servidor.get("/ponto", (request, response) => {
+    DivasController.pontos()
+        .then(divas => response.send(divas))
+})
+
 servidor.get("/divas/:id", (request, response) => {
     const id = request.params.id
     DivasController.getById(id)
@@ -100,6 +105,8 @@ servidor.delete('/divas/:id', (request, response) => {
             }
         })
 })
+
+
 
 servidor.listen(PORT)
 console.info(`rodando na porta ${PORT}`)
