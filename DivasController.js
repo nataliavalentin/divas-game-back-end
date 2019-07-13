@@ -1,5 +1,6 @@
 const { connect } = require('./DivasRepository')
 const DivasModel = require('./DivasSchema')
+const jwt = require('jsonwebtoken')
 
 connect()
 
