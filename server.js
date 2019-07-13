@@ -41,7 +41,7 @@ servidor.get("/divas/:id", (request, response) => {
         })
 })
 
-servidor.patch('/divas', (request, response) => {
+servidor.patch('/divas/:id', (request, response) => {
     const id = request.params.id
     DivasController.update(id, request.body)
         .then(usuario => {
