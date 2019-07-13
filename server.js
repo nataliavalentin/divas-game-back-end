@@ -3,7 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const servidor = express()
 const DivasController = require('./DivasController')
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 servidor.use(cors())
 servidor.use(bodyParser.json())
