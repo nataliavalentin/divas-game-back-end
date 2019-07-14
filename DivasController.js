@@ -1,8 +1,6 @@
 const { connect } = require('./DivasRepository')
 const DivasModel = require('./DivasSchema')
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
-
 
 connect()
 
@@ -17,16 +15,6 @@ const getById = (id) => {
 }
 
 const add = async(usuario) => {
-    const usuarioEncontrado = await DivasModel.findOne({ username: usuario.username })
-
-    if (usuarioEncontrado) {
-        throw new Error('Email já cadastrado')
-    }
-
-    const salt = bcrypt.genSaltSync(10)
-    const senhaCriptografada = bcrypt.hashSync(usuario.senha, salt)
-    usuario.senha = senhaCriptografada
-
     const novaDiva = new DivasModel(usuario)
     return novaDiva.save()
 }

@@ -7,6 +7,13 @@ const PORT = process.env.PORT || 8000
 
 
 
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const servidor = express()
+const DivasController = require('./DivasController')
+const PORT = process.env.PORT || 8000
+
 servidor.use(cors())
 servidor.use(bodyParser.json())
 
@@ -73,7 +80,6 @@ servidor.post('/divas/cadastro', (request, response) => {
             }
         })
 })
-
 
 servidor.post('/divas/login', (request, response) => {
     DivasController.login(request.body)
