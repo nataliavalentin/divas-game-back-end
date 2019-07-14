@@ -33,11 +33,8 @@ const login = async(dadosDoLogin) => {
     const divaEncontrada = await DivasModel.findOne({ username: dadosDoLogin.username })
 
     if (divaEncontrada) {
-        const senhaCorreta = bcrypt.compareSync(
-            dadosDoLogin.senha, divaEncontrada.senha
-        )
-
-        if (senhaCorreta) {
+        // const senhaCorreta = await DivasModel.findOne({ senha: dadosDoLogin.senha })
+        if (dadosDoLogin.senha == divaEncontrada.senha) {
             const token = jwt.sign({
                     username: divaEncontrada.username,
                     id: divaEncontrada._id
